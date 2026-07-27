@@ -1,0 +1,50 @@
+import React, { useEffect, useState } from "react"; 
+ 
+function App() { 
+  const [students, setStudents] = useState([]); 
+ 
+  useEffect(() => { 
+    setTimeout(() => { 
+      setStudents([ 
+        "Rahul", 
+        "Priya", 
+        "Amit", 
+        "Sneha", 
+        "Kiran" 
+      ]); 
+ 
+Even Easier Alternative (Best for Beginners) 
+Instead of using an online API, you can simulate fetching data with setTimeout(). This lets students focus on 
+understanding useEffect before introducing real APIs. 
+Output 
+Student List 
+ 
+Rahul 
+Priya 
+Amit 
+Sneha 
+Kiran 
+Why this version is good for beginners 
+• No internet connection is required.  
+• Students learn the purpose of useEffect without worrying about APIs.  
+• The example uses familiar names.  
+• It introduces state updates after the component loads, which is the key concept behind useEffect. 
+Page No - 44                                                                                                                                      FSD – II LAB 
+MANUAL 
+    }, 1000); 
+  }, []); 
+ 
+  return ( 
+    <div style={{ padding: "20px" }}> 
+      <h1>Student List</h1> 
+ 
+      <ul> 
+        {students.map((student, index) => ( 
+          <li key={index}>{student}</li> 
+        ))} 
+      </ul> 
+    </div> 
+  ); 
+} 
+ 
+export default App;
